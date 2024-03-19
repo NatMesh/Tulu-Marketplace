@@ -26,6 +26,9 @@
   --marketplaceColorLight: #7748d5; /* hsl(260, 63%, 56%), +10L from marketplaceColor */
   --marketplaceColorDark: #492296; /* hsl(260, 63%, 26%), -10L from marketplaceColor */
 
+  /*Test Colors*/
+  --colorPastelPink: #fbf0ef;
+
   /* Colors used for different functions (like error texts) */
 
   --colorSuccess: #2ecc71;
