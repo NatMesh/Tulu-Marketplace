@@ -52,6 +52,8 @@ import EditListingWizardTab, {
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
 
+console.log(EXTRAFEATURES);
+
 // You can reorder these panels.
 // Note 1: You need to change save button translations for new listing flow
 // Note 2: Ensure that draft listing is created after the first panel
@@ -64,6 +66,8 @@ const TABS_BOOKING = [DETAILS, LOCATION, PRICING, EXTRAFEATURES, AVAILABILITY, P
 const TABS_INQUIRY = [DETAILS, LOCATION, PRICING, PHOTOS];
 const TABS_INQUIRY_WITHOUT_PRICE = [DETAILS, LOCATION, PHOTOS];
 const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING, ...TABS_INQUIRY];
+
+console.log(TABS_BOOKING);
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -216,8 +220,6 @@ const tabCompleted = (tab, listing, config) => {
     case PHOTOS:
       return images && images.length > 0;
     case EXTRAFEATURES:
-      // /** For a required attribute: **/
-      // return !!publicData.extraFeatures;
       return true;
     default:
       return false;
