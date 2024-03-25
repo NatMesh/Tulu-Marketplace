@@ -31,8 +31,8 @@
 
   /* Colors used for different functions (like error texts) */
 
-  --colorSuccess: #2ecc71;
-  --colorSuccessDark: #239954;
+  --colorSuccess: #2ecca0;
+  --colorSuccessDark: #23997c;
   --colorSuccessLight: #f0fff6;
   --colorFail: #ff0000;
   --colorFailLight: #fff0f0;
