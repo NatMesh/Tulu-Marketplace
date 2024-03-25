@@ -1,9 +1,5 @@
 @import '../../styles/customMediaQueries.css';
 
-.favoriteButton {
-  margin: 12px 0 36px 0;
-}
-
 /* Order form inside modalContainer needs special handling */
 /* since "inMobile" breakpoint is actually --viewportLarge */
 .modalContainer {
