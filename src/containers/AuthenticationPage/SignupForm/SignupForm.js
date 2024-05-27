@@ -4,12 +4,11 @@ import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
 import classNames from 'classnames';
-
 import { FormattedMessage, injectIntl, intlShape } from '../../../util/reactIntl';
 import * as validators from '../../../util/validators';
 import { Form, PrimaryButton, FieldTextInput } from '../../../components';
-
 import css from './SignupForm.module.css';
+import FieldPhoneNumberInput from '../../../components/FieldPhoneNumberInput/FieldPhoneNumberInput';
 
 const SignupFormComponent = props => (
   <FinalForm
@@ -74,6 +73,13 @@ const SignupFormComponent = props => (
         passwordMaxLength
       );
 
+      // phone number
+      const phoneNumberRequired = validators.required(
+        intl.formatMessage({
+          id: 'SignupForm.You need to add a phone number.',
+        })
+      );
+
       const classes = classNames(rootClassName || css.root, className);
       const submitInProgress = inProgress;
       const submitDisabled = invalid || submitInProgress;
@@ -94,6 +100,20 @@ const SignupFormComponent = props => (
               })}
               validate={validators.composeValidators(emailRequired, emailValid)}
             />
+
+              <FieldPhoneNumberInput
+              className={css.password}
+              id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
+              name="phoneNumber"
+              autoComplete="tel"
+              label={intl.formatMessage({
+                id: 'Phone Number',
+              })}
+              placeholder={intl.formatMessage({
+                id: 'Phone Number',
+              })}
+              validate={phoneNumberRequired}
+              />
             <div className={css.name}>
               <FieldTextInput
                 className={css.firstNameRoot}
@@ -132,6 +152,7 @@ const SignupFormComponent = props => (
                 )}
               />
             </div>
+
             <FieldTextInput
               className={css.password}
               type="password"
@@ -146,6 +167,8 @@ const SignupFormComponent = props => (
               })}
               validate={passwordValidators}
             />
+
+
           </div>
 
           <div className={css.bottomWrapper}>

@@ -60,11 +60,11 @@ const TopbarMobileMenu = props => {
             />
           </div>
         </div>
-        <div className={css.footer}>
+        {/* <div className={css.footer}>
           <NamedLink className={css.createNewListingLink} name="NewListingPage">
             <FormattedMessage id="TopbarMobileMenu.newListingLink" />
           </NamedLink>
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -91,7 +91,7 @@ const TopbarMobileMenu = props => {
         <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
           <FormattedMessage id="TopbarMobileMenu.logoutLink" />
         </InlineTextButton>
-        <NamedLink
+        {/* <NamedLink
           className={classNames(css.inbox, currentPageClass('InboxPage'))}
           name="InboxPage"
           params={{ tab: currentUserHasListings ? 'sales' : 'orders' }}
@@ -104,7 +104,7 @@ const TopbarMobileMenu = props => {
           name="ManageListingsPage"
         >
           <FormattedMessage id="TopbarMobileMenu.yourListingsLink" />
-        </NamedLink>
+        </NamedLink> */}
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
           name="ProfileSettingsPage"
@@ -120,9 +120,9 @@ const TopbarMobileMenu = props => {
         <div className={css.spacer} />
       </div>
       <div className={css.footer}>
-        <NamedLink className={css.createNewListingLink} name="NewListingPage">
+        {/* <NamedLink className={css.createNewListingLink} name="NewListingPage">
           <FormattedMessage id="TopbarMobileMenu.newListingLink" />
-        </NamedLink>
+        </NamedLink> */}
       </div>
     </div>
   );

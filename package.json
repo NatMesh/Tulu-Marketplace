@@ -117,6 +117,7 @@
     "heroku-postbuild": "yarn run build",
     "postinstall": "patch-package",
     "translate": "node scripts/translations.js"
+
   },
   "browserslist": {
     "production": [
