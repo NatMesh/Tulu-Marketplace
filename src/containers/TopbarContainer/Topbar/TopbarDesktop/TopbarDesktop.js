@@ -72,6 +72,17 @@ const TopbarDesktop = props => {
     </NamedLink>
   ) : null;
 
+  const favoriteLink = authenticatedOnClientSide ? (
+    <NamedLink
+      className={css.inboxLink}
+      name="FavoriteListingsPage"
+    >
+      <span className={css.inbox}>
+        <FormattedMessage id="TopbarDesktop.favoriteListingsLink" />
+      </span>
+    </NamedLink>
+  ) : null;
+
   const currentPageClass = page => {
     const isAccountSettingsPage =
       page === 'AccountSettingsPage' && ACCOUNT_SETTINGS_PAGES.includes(currentPage);
@@ -110,6 +121,12 @@ const TopbarDesktop = props => {
             <span className={css.menuItemBorder} />
             <FormattedMessage id="TopbarDesktop.accountSettingsLink" />
           </NamedLink>
+          <NamedLink
+          className={classNames(css.favoriteListingsLink, currentPageClass('FavoriteListingsPage'))}
+          name="FavoriteListingsPage"
+        >
+          <FormattedMessage id="TopbarDesktop.favoriteListingsLink" />
+        </NamedLink>
         </MenuItem>
         <MenuItem key="logout">
           <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
@@ -151,6 +168,7 @@ const TopbarDesktop = props => {
         </span>
       </NamedLink> */}
       {inboxLink}
+      {favoriteLink}
       {profileMenu}
       {signupLink}
       {loginLink}

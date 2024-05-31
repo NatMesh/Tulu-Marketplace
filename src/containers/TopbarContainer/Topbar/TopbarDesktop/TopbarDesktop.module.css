@@ -275,7 +275,7 @@
   transition: width var(--transitionStyleButton);
 }
 
-.profileSettingsLink,
+.favoriteListingsLink, .profileSettingsLink,
 .yourListingsLink {
   composes: textSmall from global;
   position: relative;
